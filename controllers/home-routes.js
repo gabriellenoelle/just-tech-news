@@ -45,14 +45,11 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-<<<<<<< HEAD
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
 
-=======
->>>>>>> 4b8d6924f7c3c45cf0ddeced6fc2b0f5d6cee93c
   res.render("login");
 });
 
