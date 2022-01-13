@@ -59,6 +59,7 @@ router.post("/", (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
+<<<<<<< HEAD
   })
     .then((dbUserData) => {
       req.session.save(() => {
@@ -72,7 +73,17 @@ router.post("/", (req, res) => {
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
+=======
+  }).then((dbUserData) => {
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
+      res.json(dbUserData);
+>>>>>>> 4b8d6924f7c3c45cf0ddeced6fc2b0f5d6cee93c
     });
+  });
 });
 
 router.post("/login", (req, res) => {
